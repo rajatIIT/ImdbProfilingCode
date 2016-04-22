@@ -65,7 +65,7 @@ public class ActorCSVConverter implements JSONConverter{
              
            
                String nextLine = strLine;
-               System.out.println(nextLine);
+           //    System.out.println(nextLine);
                 
                // if next Line confers to the movie + actor regex, set/rename the current actor. 
                
@@ -77,7 +77,7 @@ public class ActorCSVConverter implements JSONConverter{
             	   // just a movie name.
             	   // TODO : write current movie.
             	   currentMovie = nextLine.trim();
-            	   System.out.println("Movie set to " + currentMovie);
+            //	   System.out.println("Movie set to " + currentMovie);
             	   writeToFile();
                } else if (currentLineType == LINE_TYPE_ACTOR_PLUS_MOVIE ){
             	   //TODO : change current movie name
@@ -85,9 +85,9 @@ public class ActorCSVConverter implements JSONConverter{
             	   //currentMovie
             	   currentName = (nextLine.split("\t")[0]).trim();
             	   currentMovie = (nextLine.split("\t")[(nextLine.split("\t").length -1)]).trim();
-            	   System.out.println(Arrays.toString(nextLine.split("\t")));
-            	   System.out.println("actor set to " + currentName);
-            	   System.out.println("Movie set to " + currentMovie);
+            	//   System.out.println(Arrays.toString(nextLine.split("\t")));
+            //	   System.out.println("actor set to " + currentName);
+            //	   System.out.println("Movie set to " + currentMovie);
             	   writeToFile();
                }
                writer.flush(); 
@@ -166,12 +166,12 @@ public class ActorCSVConverter implements JSONConverter{
     
         
     if(aPlusm && movie){
-    	System.out.println("Just movie!");
+    //	System.out.println("Just movie!");
     	return LINE_TYPE_MOVIE_ONLY;
     }
     
     if(aPlusm && !movie){
-    	System.out.println("actor plus movie!");
+    //	System.out.println("actor plus movie!");
     	return LINE_TYPE_ACTOR_PLUS_MOVIE;
     }
     	return LINE_NOT_KNOWN_TYPE;
@@ -192,7 +192,7 @@ public class ActorCSVConverter implements JSONConverter{
 	        generator.close();
 	        String writeLine = actorLineWriter.toString();
 	        writer.write(writeLine);
-	        System.out.println("write " + writeLine);
+	  //      System.out.println("write " + writeLine);
 	        writer.write("\n");
 	        writer.flush();
 	        // write to the file.
