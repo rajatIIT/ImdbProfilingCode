@@ -58,9 +58,6 @@ public class ActorCSVConverter implements JSONConverter{
 
 
             
-            
-            
-            
             while ((strLine = br.readLine()) != null){
              
            
@@ -184,8 +181,8 @@ public class ActorCSVConverter implements JSONConverter{
         JsonFactory factory = new JsonFactory();
        
         try {
-        	 generator = factory.createJsonGenerator(actorLineWriter);
-             generator.writeStartObject();
+        	generator = factory.createJsonGenerator(actorLineWriter);
+            generator.writeStartObject();
 			generator.writeStringField(currentName, currentMovie);
 			generator.writeEndObject();
 	        generator.flush();
