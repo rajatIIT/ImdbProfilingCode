@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 import moviebuzz.profiling.ActorCSVConverter;
+import moviebuzz.profiling.BusinessJSONCoverter;
 import moviebuzz.profiling.GenreJSONCoverter;
 
 
@@ -91,6 +92,11 @@ public class Main {
 			    	
 			    	GenreJSONCoverter genreConverter = new GenreJSONCoverter();
 			    	genreConverter.convertToJSON(arg2, "" + moviebuzz.filter.ParamterType.GENRE , arg3);
+			    	
+			    } else if  (arg1.equalsIgnoreCase("moviegross")){
+			    	
+			    	BusinessJSONCoverter businessConverter = new BusinessJSONCoverter();
+			    	businessConverter.convertToJSON(arg2, "" +moviebuzz.filter.ParamterType.MOVIE_GROSS, arg3);
 			    	
 			    }
 			}
