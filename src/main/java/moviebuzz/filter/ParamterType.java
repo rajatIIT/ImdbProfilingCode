@@ -1,5 +1,14 @@
 package moviebuzz.filter;
 
+
+/**
+ * 
+ * Names of type of data we intend to profile using this application.
+ * Primarily used for clarity.
+ * 
+ * @author rajatpawar
+ *
+ */
 public class ParamterType {
 	
 	

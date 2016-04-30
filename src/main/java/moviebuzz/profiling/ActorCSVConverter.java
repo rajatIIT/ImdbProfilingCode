@@ -19,7 +19,27 @@ import org.codehaus.jackson.JsonGenerator;
 
 
 
-
+/**
+ * 
+ * 
+ * A utility used to profile the static "Actors/Actresses vs Movie Info" provided by IMDB.
+ * Using JSON as output format for consistency, simplicity and speed.
+ * 
+ * This utility converts the business info from IMDB's "tab-separated format" to 
+ * key-value format respected by JSON and Hadoop. Specifically, it writes info in the 
+ * following format : 
+ * { "<Actor Name>" : "<Movie Name>" }
+ * 
+ *
+ * We write one JSON object per line as opposed to writing a large single 
+ * object in the entire output file to make it suitable for parallel processing by Hadoop.
+ * Hadoop divides the file into chunks and then processes them "line-by-line".
+ * 
+ * 
+ * 
+ * @author rajatpawar
+ *
+ */
 public class ActorCSVConverter implements JSONConverter{
     
     String currentName;

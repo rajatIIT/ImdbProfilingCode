@@ -14,6 +14,29 @@ import org.codehaus.jackson.JsonFactory;
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.JsonGenerator;
 
+
+/**
+ * 
+ * A utility used to profile the static "movie business information" provided by IMDB.
+ * Using JSON as output format for consistency, simplicity and speed.
+ * 
+ * This utility converts the business info from IMDB's "tab-separated format" to 
+ * key-value format respected by JSON and Hadoop. Specifically, it writes info in the 
+ * following format : 
+ * { "<Movie Name>" : "<Gross Revenue>" }
+ * 
+ * Since time provided to implement this project was limited and this project is more meant for 
+ * illustrating working of Hadoop, we include only one Movie Gross info per movie. 
+ * (which means that gross distribution for countries is ignored : Either one country gross or worldwide gross)
+ * 
+ * We write one JSON object per line as opposed to writing a large single 
+ * object in the entire output file to make it suitable for parallel processing by Hadoop.
+ * Hadoop divides the file into chunks and then processes them "line-by-line".
+ *  
+ * 
+ * @author rajatpawar
+ *
+ */
 public class BusinessJSONCoverter implements JSONConverter{
 
 	JsonGenerator generator;

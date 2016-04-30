@@ -15,6 +15,17 @@ import java.util.regex.Pattern;
 import org.codehaus.jackson.JsonFactory;
 import org.codehaus.jackson.JsonGenerator;
 
+
+/**
+ * 
+ * Simple data profiling utility to convert tab-separated static info from imdb to the 
+ * key-value format respected by Hadoop. 
+ * {"<MovieName>":"<Genre>"}
+ * 
+ * 
+ * @author rajatpawar
+ *
+ */
 public class GenreJSONCoverter implements JSONConverter {
 	
 	JsonGenerator generator;
